@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+</head>
+<body>
+    <section>
+        <div style="width: 80%; margin: auto; font-size: 20px;">
+            <h1>1. localStorage and sessionStorage</h1> 
+            <p style="text-align:justify">localStorage and sessionStorage are relatively new APIs (meaning, not all legacy browsers will support them) and are near identical (both in APIs and capabilities) with the sole exception of persistence. sessionStorage (as the name suggests) is only available for the duration of the browser session (and is deleted when the tab or window is closed) - it does, however, survive page reloads. <br>
+            Clearly, if the data you are storing needs to be available on an ongoing basis then localStorage is preferable to sessionStorage - although you should note both can be cleared by the user so you should not rely on the continuing existence of data in either case. <br>
+            localStorage and sessionStorage are perfect for persisting non-sensitive data needed within client scripts between pages (for example: preferences, scores in games). The data stored in localStorage and sessionStorage can easily be read or changed from within the client/browser so should not be relied upon for storage of sensitive or security-related data within applications.</p>
+        </div>
+        <div  style="width: 80%; margin: auto; font-size: 20px;">
+            <h1>2. Global Scope and Block Scope</h1>
+            <p style="text-align:justify">The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable. <br>
+            Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.</p>
+        </div>
+        <div  style="width: 80%; margin: auto; font-size: 20px;">
+            <h1>3. JavaScript event loop work</h1>
+            <p style="text-align:justify">We’ll start with a somewhat of an odd claim — despite allowing async JavaScript code (like the setTimeout we just discussed), until ES6, JavaScript itself has actually never had any direct notion of asynchronicity built into it. The JavaScript engine has never done anything more than executing a single chunk of your program at any given moment. For more details on how JavaScript engines work (Google’s V8 specifically), check one of our previous articles on the topic.So, who tells the JS Engine to execute chunks of your program? In reality, the JS Engine doesn’t run in isolation — it runs inside a hosting environment, which for most developers is the typical web browser or Node.js. Actually, nowadays, JavaScript gets embedded into all kinds of devices, from robots to light bulbs. Every single device represents a different type of hosting environment for the JS Engine.
+            The common denominator in all environments is a built-in mechanism called the event loop, which handles the execution of multiple chunks of your program over time, each time invoking the JS Engine.This means that the JS Engine is just an on-demand execution environment for any arbitrary JS code. It’s the surrounding environment that schedules the events (the JS code executions).So, for example, when your JavaScript program makes an Ajax request to fetch some data from the server, you set up the “response” code in a function (the “callback”), and the JS Engine tells the hosting environment:“Hey, I’m going to suspend execution for now, but whenever you finish with that network request, and you have some data, please call this function back.”The browser is then set up to listen for the response from the network, and when it has something to return to you, it will schedule the callback function to be executed by inserting it into the event loop.</p>
+        </div>
+        <div  style="width: 80%; margin: auto; font-size: 20px;">
+            <h1>4. There are 8 way to get undefine</h1>
+            <ol type="1">
+                <li>variable that is not initialized will give undefined.</li>
+                <li>function with no return.</li>
+                <li>parameter that is not passed will be undefined.</li>
+                <li>if return has nothing no the right side will return undefined.</li>
+                <li>property doesn't exists on an objectwill give you undefined.</li>
+                <li>accessing array elements outside of the index range undefined.</li>
+                <li>deleting an element inside an array undefined.</li>
+                <li>sat a value directly to undefined.</li>
+            </ol>
+        </div>
+    </section>
+</body>
+</html>
